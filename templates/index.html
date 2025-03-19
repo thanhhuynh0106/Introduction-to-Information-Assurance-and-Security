@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Attack Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>WEB ATTACK DETECTOR</h1>
+    </div>
+    <div class="container">
+        <h2>Payload check for web attack detection</h2>
+        <form method="POST">
+            <textarea name="payload" rows="4" placeholder="Input payload ..."></textarea>
+            <button type="submit">Check</button>
+        </form>
+
+        <div class="res">
+            {% if result %}
+                <p id="result">Result: <strong>{{ result }}</strong></p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
