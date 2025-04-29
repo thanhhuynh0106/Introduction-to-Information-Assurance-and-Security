@@ -13,8 +13,8 @@ warnings.filterwarnings('ignore')
 app = Flask(__name__)
 
 #Loads models
-model_path = os.path.join(os.path.dirname(__file__), 'models', 'results', 'rf_model_ver3.pkl')
-vectorizer_path = os.path.join(os.path.dirname(__file__), 'models', 'results', 'vectorizer_3.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'models', 'results', 'nb_rf_rcm.pkl')
+vectorizer_path = os.path.join(os.path.dirname(__file__), 'models', 'results', 'lr_vectorizer.pkl')
 model = joblib.load(model_path)
 vectorizer = joblib.load(vectorizer_path)
 
