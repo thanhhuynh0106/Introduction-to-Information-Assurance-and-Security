@@ -19,8 +19,23 @@
         </form>
 
         <div class="res">
-            {% if result %}
-                <p id="result">Result: <strong>{{ result }}</strong></p>
+            {% if results %}
+                <div class="model-result">
+                    <h3>Naive Bayes & Random Forest Model</h3>
+                    <p id="result-1">Result: <strong>{{ results.model1 }}</strong></p>
+                </div>
+                <div class="model-result">
+                    <h3>Logistic Regression Model</h3>
+                    <p id="result-2">Result: <strong>{{ results.model2 }}</strong></p>
+                </div>
+                <div class="model-result">
+                    <h3>K-Nearest Neighbors Model</h3>
+                    <p id="result-3">Result: <strong>{{ results.model3 }}</strong></p>
+                </div>
+                <div class="model-result">
+                    <h3>Random Forest & Gradient Boosting Model</h3>
+                    <p id="result-4">Result: <strong>{{ results.model4 }}</strong></p>
+                </div>
             {% endif %}
         </div>
     </div>
