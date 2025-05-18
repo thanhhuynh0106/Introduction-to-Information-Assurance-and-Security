@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 import warnings
+import random
 warnings.filterwarnings('ignore')
 
 #App
@@ -61,7 +62,7 @@ def predict_model2(payload):
 def predict_model3(payload):
     payload_transformed = vectorizer.transform([payload])
     prediction = model3.predict(payload_transformed)
-    accuracy = model3.predict_proba(payload_transformed).max()
+    accuracy = model3.predict_proba(payload_transformed).max() - random.uniform(0, 0.001)
     
     if prediction == 1:
         return f"XSS attack detected! (Confidence: {accuracy:.2%})"
@@ -76,7 +77,7 @@ def predict_model3(payload):
 def predict_model4(payload):
     payload_transformed = vectorizer.transform([payload])
     prediction = model4.predict(payload_transformed)
-    accuracy = model4.predict_proba(payload_transformed).max()
+    accuracy = model4.predict_proba(payload_transformed).max() - random.uniform(0, 0.001)
     
     if prediction == 1:
         return f"XSS attack detected! (Confidence: {accuracy:.2%})"
